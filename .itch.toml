@@ -1,0 +1,24 @@
+# OBOL: The Collector's Debt — Itch.io App & Web Launch Manifest (.itch.toml)
+# Reference: https://itch.io/docs/itch/integrating/manifest.html
+
+[[actions]]
+name = "play"
+path = "OBOL-Collectors-Debt-3D.exe"
+platform = "windows"
+scope = "profile:me"
+sandbox = true
+
+[[actions]]
+name = "play"
+path = "OBOL-Collectors-Debt-3D.x86_64"
+platform = "linux"
+scope = "profile:me"
+sandbox = true
+
+[[actions]]
+name = "play"
+path = "index.html"
+platform = "unknown"
+
+[[prereqs]]
+name = "vcredist-2019-x64"

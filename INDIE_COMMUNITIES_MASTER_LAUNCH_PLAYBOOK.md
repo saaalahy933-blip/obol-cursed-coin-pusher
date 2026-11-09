@@ -1,0 +1,25 @@
+# OBOL: The Cursed Coin Pusher — Public & Indie Communities Master Launch Playbook
+
+- **Total Specialized Indie Community Agents**: `10`
+- **Total Ready-to-Post Community Campaigns, Threads, Devlogs & Pitches**: `80`
+- **Total Aspect-Ratio-Exact Real-Gameplay Visual Cards & Banners**: `32`
+- **Total Campaign Package Footprint**: `31.11 MB`
+- **Interactive Control Center Dashboard**: [`preview-indie-communities-campaign.html`](./preview-indie-communities-campaign.html)
+- **Standalone Interactive Press Kit**: [`10-presskit-and-creator-outreach/presskit.html`](./10-presskit-and-creator-outreach/presskit.html)
+
+---
+
+## 10-Community Campaign Directory Matrix
+
+| Agent | Community Package Directory | Ecosystem / Channels | Visual Cards | Ready-to-Post Copy & Playbooks |
+| :--- | :--- | :--- | :--- | :--- |
+| **Agent 01** | `./01-reddit-communities/` | **Reddit Indie & Roguelike Suite (10 Subreddits)** | `reddit-card-01-roguelites-synergy.png` (`1920x1080`), `reddit-card-02-gamedev-3engine-architecture.png` (`1920x1080`), `reddit-card-03-destroy-my-game-feedback.png` (`1920x1080`) | `10` posts — [`REDDIT_10_SUBREDDITS_PLAYBOOK.md`](./01-reddit-communities/REDDIT_10_SUBREDDITS_PLAYBOOK.md) |
+| **Agent 02** | `./02-x-twitter-and-bluesky/` | **X (Twitter) & Bluesky Viral Thread Suite** | `x-card-01-screenshot-saturday.png` (`1600x900`), `x-card-02-5-mythic-fusions-breakdown.png` (`1600x900`), `x-card-03-guillotine-blood-pact.png` (`1600x900`) | `15` posts — [`X_AND_BLUESKY_VIRAL_THREADS_PLAYBOOK.md`](./02-x-twitter-and-bluesky/X_AND_BLUESKY_VIRAL_THREADS_PLAYBOOK.md) |
+| **Agent 03** | `./03-steam-community-hub/` | **Steam Community Hub, News & Next Fest Suite** | `steam-announcement-fusions-1920x1080.png` (`1920x1080`), `steam-event-cover-800x450.png` (`800x450`), `steam-event-header-1920x622.png` (`1920x622`) | `10` posts — [`STEAM_COMMUNITY_HUB_AND_NEWS_PLAYBOOK.md`](./03-steam-community-hub/STEAM_COMMUNITY_HUB_AND_NEWS_PLAYBOOK.md) |
+| **Agent 04** | `./04-itch-devlogs-and-forum/` | **Itch.io Major Update Devlogs & Forum Suite** | `itch-devlog-01-diegetic-cabinet-1200x630.png` (`1200x630`), `itch-devlog-02-240hz-math-1200x630.png` (`1200x630`), `itch-devlog-03-acoustic-synth-1200x630.png` (`1200x630`) | `9` posts — [`ITCH_DEVLOGS_AND_FORUM_PLAYBOOK.md`](./04-itch-devlogs-and-forum/ITCH_DEVLOGS_AND_FORUM_PLAYBOOK.md) |
+| **Agent 05** | `./05-discord-indie-communities/` | **Discord Indie Showcases & Official Server Kit** | `discord-daily-challenge-banner-1200x480.png` (`1200x480`), `discord-server-invite-splash-1920x1080.png` (`1920x1080`), `discord-showcase-embed-card-1200x675.png` (`1200x675`) | `6` posts — [`DISCORD_COMMUNITIES_AND_SERVER_PLAYBOOK.md`](./05-discord-indie-communities/DISCORD_COMMUNITIES_AND_SERVER_PLAYBOOK.md) |
+| **Agent 06** | `./06-hackernews-and-producthunt/` | **Hacker News (Show HN), Lobste.rs & Product Hunt** | `ph-gallery-01-hero-pitch-1270x760.png` (`1270x760`), `ph-gallery-02-240hz-physics-1270x760.png` (`1270x760`), `ph-gallery-03-5-diegetic-cameras-1270x760.png` (`1270x760`), `ph-gallery-04-draft-and-fusions-1270x760.png` (`1270x760`) | `0` posts — [`HACKERNEWS_AND_PRODUCTHUNT_PLAYBOOK.md`](./06-hackernews-and-producthunt/HACKERNEWS_AND_PRODUCTHUNT_PLAYBOOK.md) |
+| **Agent 07** | `./07-tiktok-reels-and-yt-community/` | **TikTok, Instagram 4:5 Carousel & YT Community Polls** | `ig-carousel-01-cover-1080x1350.png` (`1080x1350`), `ig-carousel-02-loadouts-1080x1350.png` (`1080x1350`), `ig-carousel-03-fusions-1080x1350.png` (`1080x1350`), `yt-community-poll-card-1200x1200.png` (`1200x1200`) | `19` posts — [`TIKTOK_IG_REELS_AND_YT_COMMUNITY_PLAYBOOK.md`](./07-tiktok-reels-and-yt-community/TIKTOK_IG_REELS_AND_YT_COMMUNITY_PLAYBOOK.md) |
+| **Agent 08** | `./08-indiedb-tigsource-newgrounds/` | **IndieDB, TIGSource Devlog (BBCode) & Newgrounds** | `indiedb-article-header-1920x1080.png` (`1920x1080`), `newgrounds-launch-card-1280x720.png` (`1280x720`), `tigsource-devlog-banner-1200x400.png` (`1200x400`) | `3` posts — [`INDIEDB_TIGSOURCE_NEWGROUNDS_PLAYBOOK.md`](./08-indiedb-tigsource-newgrounds/INDIEDB_TIGSOURCE_NEWGROUNDS_PLAYBOOK.md) |
+| **Agent 09** | `./09-engine-dev-showcases/` | **Godot Forum, Unity Discussions & Three.js Showcases** | `engine-card-01-godot4-vulkan-1920x1080.png` (`1920x1080`), `engine-card-02-unity6-physx240-1920x1080.png` (`1920x1080`), `engine-card-03-webgl2-threejs-1920x1080.png` (`1920x1080`) | `3` posts — [`ENGINE_DEV_FORUMS_SHOWCASE_PLAYBOOK.md`](./09-engine-dev-showcases/ENGINE_DEV_FORUMS_SHOWCASE_PLAYBOOK.md) |
+| **Agent 10** | `./10-presskit-and-creator-outreach/` | **Interactive Press Kit (presskit.html) & Creator Pitches** | `creator-thumbnail-overlay-kit-1920x1080.png` (`1920x1080`), `press-logos-and-medallion-sheet-1600x900.png` (`1600x900`), `presskit-hero-banner-1920x1080.png` (`1920x1080`) | `5` posts — [`PRESSKIT_AND_CREATOR_OUTREACH_PLAYBOOK.md`](./10-presskit-and-creator-outreach/PRESSKIT_AND_CREATOR_OUTREACH_PLAYBOOK.md), [`presskit.html`](./10-presskit-and-creator-outreach/presskit.html) |

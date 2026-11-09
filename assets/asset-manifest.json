@@ -1,0 +1,156 @@
+{
+  "project": "OBOL: The Cursed Coin Pusher",
+  "updated": "2026-11-05",
+  "license": "CC0-1.0 / Blender 5.2 Cycles PBR 3D Key Art & Self-Authored Physical-Modeling DSP Pipeline",
+  "assets": [
+    {
+      "id": "coin-clink-1..3",
+      "path": "assets/audio/foley/coin-clink-1.wav",
+      "type": "audio/wav",
+      "role": "Modal Chladni metallic coin collision foley pool",
+      "status": "approved"
+    },
+    {
+      "id": "coin-clink-heavy",
+      "path": "assets/audio/foley/coin-clink-heavy.wav",
+      "type": "audio/wav",
+      "role": "Heavy bullion / sovereign metallic impact foley",
+      "status": "approved"
+    },
+    {
+      "id": "coin-chute-drop",
+      "path": "assets/audio/foley/coin-chute-drop.wav",
+      "type": "audio/wav",
+      "role": "Collection chute multi-bounce brass plate drop",
+      "status": "approved"
+    },
+    {
+      "id": "piston-stroke",
+      "path": "assets/audio/foley/piston-stroke.wav",
+      "type": "audio/wav",
+      "role": "Reciprocating pusher forward gear-ratchet stroke",
+      "status": "approved"
+    },
+    {
+      "id": "piston-retract",
+      "path": "assets/audio/foley/piston-retract.wav",
+      "type": "audio/wav",
+      "role": "Reciprocating pusher pneumatic retraction",
+      "status": "approved"
+    },
+    {
+      "id": "guillotine-shear",
+      "path": "assets/audio/foley/guillotine-shear.wav",
+      "type": "audio/wav",
+      "role": "Iron Shears guillotine blade slide and chop",
+      "status": "approved"
+    },
+    {
+      "id": "jackpot-bell",
+      "path": "assets/audio/foley/jackpot-bell.wav",
+      "type": "audio/wav",
+      "role": "Mechanical solenoid arcade jackpot bell",
+      "status": "approved"
+    },
+    {
+      "id": "ir-iron-booth",
+      "path": "assets/audio/ir-iron-booth.wav",
+      "type": "audio/wav",
+      "role": "WebAudio ConvolverNode cabinet acoustic impulse response",
+      "status": "approved"
+    },
+    {
+      "id": "stem-base-drone",
+      "path": "assets/audio/stems/stem-base-drone.wav",
+      "type": "audio/wav",
+      "role": "Adaptive Music Stem 1 (110 BPM Dark Industrial Drone)",
+      "status": "approved"
+    },
+    {
+      "id": "stem-rhythm-machinery",
+      "path": "assets/audio/stems/stem-rhythm-machinery.wav",
+      "type": "audio/wav",
+      "role": "Adaptive Music Stem 2 (110 BPM Industrial Anvil/Kick Rhythm)",
+      "status": "approved"
+    },
+    {
+      "id": "stem-tension-overdrive",
+      "path": "assets/audio/stems/stem-tension-overdrive.wav",
+      "type": "audio/wav",
+      "role": "Adaptive Music Stem 3 (110 BPM Occult Phrygian Overdrive Arpeggio)",
+      "status": "approved"
+    },
+    {
+      "id": "baize-felt",
+      "path": "assets/art/baize-felt.png",
+      "type": "image/png",
+      "dimensions": "256x256",
+      "role": "Tileable lower coin bed occult green baize texture",
+      "status": "approved"
+    },
+    {
+      "id": "iron-grain",
+      "path": "assets/art/iron-grain.png",
+      "type": "image/png",
+      "dimensions": "256x256",
+      "role": "Tileable reciprocating pusher brushed cast-iron texture",
+      "status": "approved"
+    },
+    {
+      "id": "collector-automaton",
+      "path": "assets/art/collector-automaton.png",
+      "type": "image/png",
+      "dimensions": "512x512",
+      "role": "Blender 5.2 composited & alpha-keyed dark-occult Collector clockwork skull automaton bust for upper shadowbox & left peephole",
+      "status": "approved"
+    },
+    {
+      "id": "collector-claw",
+      "path": "assets/art/collector-claw.png",
+      "type": "image/png",
+      "dimensions": "256x256",
+      "role": "Blender 5.2 Cycles PBR 3D articulated mechanical brass-and-iron fingers gripping the alcove sill",
+      "status": "approved"
+    },
+    {
+      "id": "reliquary-chest",
+      "path": "assets/art/reliquary-chest.png",
+      "type": "image/png",
+      "dimensions": "256x256",
+      "role": "Blender 5.2 Cycles PBR 3D iron-banded reliquary lockbox overflowing with gold bullion",
+      "status": "approved"
+    },
+    {
+      "id": "guillotine-blade",
+      "path": "assets/art/guillotine-blade.png",
+      "type": "image/png",
+      "dimensions": "1024x384",
+      "role": "Blender 5.2 Cycles PBR 3D full-width blood-tempered forged Damascus steel guillotine blade, fullers, and riveted crossbar",
+      "status": "approved"
+    },
+    {
+      "id": "coin-pbr-base",
+      "path": "assets/art/coin-pbr-base.png",
+      "type": "image/png",
+      "dimensions": "256x256",
+      "role": "Blender 5.2 Cycles PBR 3D top-down milled coin normal/specular relief overlay",
+      "status": "approved"
+    },
+    {
+      "id": "bumper-capstan",
+      "path": "assets/art/bumper-capstan.png",
+      "type": "image/png",
+      "dimensions": "256x256",
+      "role": "Blender 5.2 Cycles PBR 3D spoked brass capstan wheel bumper",
+      "status": "approved"
+    },
+    {
+      "id": "pegboard-backplate",
+      "path": "assets/art/pegboard-backplate.png",
+      "type": "image/png",
+      "dimensions": "680x220",
+      "role": "Blender 5.2 Cycles PBR 3D recessed dark-occult mechanical clockwork cogwheel & hydraulic piston chamber backplate",
+      "status": "approved"
+    }
+  ]
+}

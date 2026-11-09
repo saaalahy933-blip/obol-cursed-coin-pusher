@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>OBOL: The Cursed Coin Pusher</title>
+  <link rel="icon" type="image/png" href="assets/art/collector-automaton.png" />
+  <link rel="stylesheet" href="style.css?v=20261105-s9" />
+</head>
+<body>
+  <!-- CRT Scanline & Vignette Overlay -->
+  <div id="crt-overlay"></div>
+  <div id="blood-flash" class="blood-flash"></div>
+
+  <!-- 3D Perspective Underground Crypt Room -->
+  <div id="cabinet-room" class="cabinet-room">
+    <div class="crypt-torch crypt-torch-left" aria-hidden="true"></div>
+    <div class="crypt-torch crypt-torch-right" aria-hidden="true"></div>
+    <div class="crypt-floor-stage" aria-hidden="true"></div>
+
+    <!-- Main Arcade Booth Container -->
+    <div id="app-shell">
+    <!-- LEFT PANEL: The Collector, Quota Status, Lives (Fingers), & Pouch Deck -->
+    <aside id="left-panel" class="side-panel left-panel ledger-panel">
+      <div class="panel-box collector-box">
+        <div class="box-header">
+          <span class="skull-icon" data-obol-icon="skull" data-obol-size="16"></span>
+          <span>THE COLLECTOR'S DEMAND</span>
+          <span class="act-badge" id="act-badge">QUOTA #1</span>
+        </div>
+
+        <!-- Boss Quota Active Modifier Banner (Visible on Boss Quotas #3, #6, etc.) -->
+        <div id="boss-banner" class="boss-banner hidden"></div>
+
+        <!-- Diegetic Collector Eyes Peephole -->
+        <div class="peephole" id="collector-peephole">
+          <div class="peephole-slit">
+            <img class="peephole-portrait" src="assets/art/collector-automaton.png" alt="The Collector" />
+            <div class="collector-eye left-eye" id="eye-left"></div>
+            <div class="collector-eye right-eye" id="eye-right"></div>
+          </div>
+          <div class="collector-dialogue" id="collector-quote">"FEED THE IRON LIP, DEBTOR..."</div>
+        </div>
+
+        <!-- Nixie / LED Quota Readout -->
+        <div class="readout-grid">
+          <div class="readout-item">
+            <label>CHUTE BANK</label>
+            <div class="nixie-value gold" id="bank-display">$0</div>
+          </div>
+          <div class="readout-item">
+            <label>QUOTA TARGET</label>
+            <div class="nixie-value red" id="quota-display">$150</div>
+          </div>
+        </div>
+
+        <div class="quota-progress-wrap">
+          <div class="quota-progress-bar" id="quota-bar" style="width: 0%"></div>
+          <span class="quota-progress-text" id="quota-pct">0% OF DEBT PAID</span>
+        </div>
+
+        <div class="readout-grid sub-readout">
+          <div class="readout-item">
+            <label>DEADLINE CLOCK</label>
+            <div class="nixie-value amber" id="timer-display">03:00</div>
+          </div>
+          <div class="readout-item">
+            <label>SURPLUS WALLET</label>
+            <div class="nixie-value green" id="wallet-display">$45</div>
+          </div>
+        </div>
+
+        <button id="pay-quota-btn" class="industrial-btn pay-btn" disabled>
+          <span>PAY QUOTA EARLY (+INTEREST)</span>
+        </button>
+
+        <button id="blood-pact-btn" class="industrial-btn pact-btn" title="Once per Quota: Add +40% Tilt Risk to unleash 5 Cursed Tokens & +x2.0 Combo!">
+          <span><span data-obol-icon="BLOOD" data-obol-size="15"></span> BLOOD PACT (+5 TOKENS / +40% TILT)</span>
+        </button>
+      </div>
+
+      <!-- 3 Fingers (Lives) -->
+      <div class="panel-box fingers-box">
+        <div class="box-header">
+          <span><span data-obol-icon="finger" data-obol-size="15"></span> COLLATERAL (FINGERS)</span>
+          <span id="fingers-count-label">3 / 3 INTACT</span>
+        </div>
+        <div class="fingers-row" id="fingers-row">
+          <div class="finger-slot finger-box intact" data-finger="0">
+            <div class="finger-graphic finger-icon" data-obol-icon="finger" data-obol-size="18"></div>
+            <span class="finger-label">L-INDEX</span>
+          </div>
+          <div class="finger-slot finger-box intact" data-finger="1">
+            <div class="finger-graphic finger-icon" data-obol-icon="finger" data-obol-size="18"></div>
+            <span class="finger-label">L-MID</span>
+          </div>
+          <div class="finger-slot finger-box intact" data-finger="2">
+            <div class="finger-graphic finger-icon" data-obol-icon="finger" data-obol-size="18"></div>
+            <span class="finger-label">L-RING</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pouch & Next Drop Queue -->
+      <div class="panel-box pouch-box">
+        <div class="box-header">
+          <span><span data-obol-icon="pouch" data-obol-size="15"></span> CURSED POUCH</span>
+          <button id="view-pouch-btn" class="mini-btn" title="Inspect all tokens in your pouch">INSPECT (<span id="pouch-size">12</span>)</button>
+        </div>
+
+        <div class="queue-section" id="hand-queue">
+          <div id="hand-token-card" class="hand-token-loader-wrap" data-tooltip-title="Copper Obol" data-tooltip-desc="Worn purgatory bronze ($10). Prime food for Leech Pennies.">
+            <div class="next-token-card" id="next-token-card" data-tooltip-title="Copper Obol" data-tooltip-desc="Worn purgatory bronze ($10). Prime food for Leech Pennies.">
+              <div class="token-preview-badge" id="next-token-icon" data-obol-icon="obol" data-obol-size="26"></div>
+              <div class="next-token-info">
+                <div class="next-token-top-row">
+                  <span class="next-token-label">IN HAND <span class="swap-hint">[R]</span></span>
+                  <button id="swap-hand-btn" class="mini-btn" title="Cycle/Swap token in hand with next in queue [R]">SWAP</button>
+                </div>
+                <div class="next-token-name" id="next-token-name">Copper Obol</div>
+                <div class="next-token-desc hand-token-stat-pill" id="next-token-desc"><span id="hand-token-desc">$10 BASE &bull; 1.0x MASS &bull; BRONZE MINT</span></div>
+              </div>
+            </div>
+          </div>
+
+          <div class="upcoming-row">
+            <span class="upcoming-label">QUEUE:</span>
+            <div id="upcoming-queue" class="upcoming-icons"></div>
+          </div>
+        </div>
+
+        <!-- Emergency Mint / Buy Extra Copper Obols if low -->
+        <button id="mint-obol-btn" class="industrial-btn secondary-btn" title="Spend $15 from wallet to immediately spawn 3 Copper Obols onto the upper shelf">
+          <span><span data-obol-icon="gear" data-obol-size="15"></span> BLOOD-MINT 3 OBOLS ($15)</span>
+        </button>
+      </div>
+    </aside>
+
+    <!-- CENTER PANEL: The 2.5D Coin Pusher Cabinet Canvas -->
+    <main id="arcade-cabinet" class="cabinet-center center-panel">
+      <div id="cabinet-header" class="cabinet-top-marquee">
+        <div class="cabinet-header-top">
+          <div class="marquee-title cabinet-title-group">
+            <h1>O B O L</h1>
+            <p class="marquee-sub cabinet-subtitle">PURGATORY MINT &bull; MODEL VIII</p><span id="run-seed-badge" class="run-seed-badge" title="Click to copy Run Seed">SEED: OBOL-0000</span>
+          </div>
+          <div class="marquee-controls">
+            <button id="fever-demo-btn" class="icon-btn fever-btn" title="Trigger a massive 3-Second Viral Cascade [F] (Great for itch.io GIFs / Testing!)"><span data-obol-icon="film" data-obol-size="15"></span> GIF</button>
+            <button id="grimoire-btn" class="icon-btn" title="Sinner's Grimoire: Achievements (+$5 Permanent Wallet Bonus Each) & Token/Relic Compendium"><span data-obol-icon="book" data-obol-size="16"></span></button>
+            <button id="loadout-btn" class="icon-btn" title="Switch Starter Loadout / New Run"><span data-obol-icon="pouch" data-obol-size="16"></span></button>
+            <button id="mute-btn" class="icon-btn" title="Toggle Audio"><span data-obol-icon="speaker_on" data-obol-size="16"></span></button>
+            <button id="crt-btn" class="icon-btn" title="Toggle CRT Shader"><span data-obol-icon="crt" data-obol-size="16"></span></button>
+            <button id="fullscreen-btn" class="icon-btn" title="Toggle Fullscreen (itch.io Embed)"><span data-obol-icon="fullscreen" data-obol-size="16"></span></button>
+            <button id="help-btn" class="icon-btn" title="How to Play">?</button>
+          </div>
+        </div>
+        <div id="camera-view-bar" class="camera-view-bar" role="group" aria-label="3D Camera View Switcher">
+          <span class="cam-bar-label"><span data-obol-icon="crt" data-obol-size="12"></span> 3D CAM:</span>
+          <button type="button" class="cam-preset-btn active" data-cam-preset="playfield" onclick="if(window.obolEngine3D) window.obolEngine3D.setCameraPreset('playfield'); this.parentElement.querySelectorAll('.cam-preset-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">[CABINET]</button>
+          <button type="button" class="cam-preset-btn" data-cam-preset="angled_booth" onclick="if(window.obolEngine3D) window.obolEngine3D.setCameraPreset('angled_booth'); this.parentElement.querySelectorAll('.cam-preset-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">[WALK-UP 3D]</button>
+          <button type="button" class="cam-preset-btn" data-cam-preset="lip_closeup" onclick="if(window.obolEngine3D) window.obolEngine3D.setCameraPreset('lip_closeup'); this.parentElement.querySelectorAll('.cam-preset-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">[LIP CLOSEUP]</button>
+          <button type="button" class="cam-preset-btn" data-cam-preset="peephole" onclick="if(window.obolEngine3D) window.obolEngine3D.setCameraPreset('peephole'); this.parentElement.querySelectorAll('.cam-preset-btn').forEach(b=>b.classList.remove('active')); this.classList.add('active');">[COLLECTOR]</button>
+          <button type="button" class="cam-theater-btn" id="btn-theater-3d" title="Toggle Immersive Theater 3D Room Mode [T]" onclick="if(window.game && window.game.toggleTheater3DMode) window.game.toggleTheater3DMode();">[THEATER 3D]</button>
+        </div>
+      </div>
+
+      <!-- Combo Multiplier HUD Bar right above the glass -->
+      <div class="combo-hud" id="combo-hud">
+        <div class="combo-left">
+          <span class="combo-tag">CHUTE COMBO</span>
+          <span class="combo-mult" id="combo-mult-text">x1.0</span>
+        </div>
+        <div class="combo-timer-track">
+          <div class="combo-timer-fill" id="combo-timer-fill" style="width: 0%"></div>
+        </div>
+        <div class="combo-right">
+          <span class="combo-tag">STREAK</span>
+          <span class="combo-streak" id="combo-streak-text">0 COINS</span>
+        </div>
+      </div>
+
+      <!-- The Playfield Canvas Wrapper -->
+      <div class="canvas-housing" id="canvas-housing">
+        <canvas id="pusher-canvas" width="680" height="640"></canvas>
+      </div>
+
+      <!-- Bottom Control Deck: Piston Cycle & SLAM / TILT Controls -->
+      <div class="cabinet-control-deck">
+        <div class="tilt-gauge-container">
+          <div class="tilt-header">
+            <span><span data-obol-icon="warning" data-obol-size="14"></span> TILT SENSOR ALARM</span>
+            <span id="tilt-pct-text">0%</span>
+          </div>
+          <div class="tilt-meter-outer">
+            <div class="tilt-meter-fill" id="tilt-meter-fill" style="width: 0%"></div>
+            <div class="tilt-danger-zone"></div>
+          </div>
+          <div class="tilt-subtext">WARNING: TRIPPING SENSOR (100%) PROVOKES THE COLLECTOR</div>
+        </div>
+
+        <button id="slam-btn" class="slam-button" title="Violently shove the cabinet (SPACEBAR) to dislodge teetering coins! Raises Tilt Sensor.">
+          <span class="slam-main"><span data-obol-icon="fist" data-obol-size="16"></span> SLAM CABINET</span>
+          <span class="slam-sub">[SPACE] SHOVE PILE &bull; +TILT RISK</span>
+        </button>
+      </div>
+    </main>
+
+    <!-- RIGHT PANEL: Contraband Relics ("Jokers"), Black Market Quick-Shop, & Telemetry -->
+    <aside id="right-panel" class="side-panel right-panel ledger-panel">
+      <div class="panel-box relics-box">
+        <div class="box-header">
+          <span><span data-obol-icon="gear" data-obol-size="15"></span> CONTRABAND RELICS</span>
+          <span id="relic-slots-count" style="white-space: nowrap;">0 / 6</span>
+        </div>
+        <div id="relics-list" class="relics-list">
+          <div id="contraband-slot-list" class="contraband-socket-grid"></div>
+        </div>
+      </div>
+
+      <!-- Black Market Slot (Live In-Run or Between-Quota Shop) -->
+      <div class="panel-box black-market-box market-box">
+        <div class="box-header">
+          <span><span data-obol-icon="RELIC_CROWN" data-obol-size="15"></span> BLACK-MARKET SLOT</span>
+          <button id="reroll-market-btn" class="mini-btn">REROLL ($20)</button>
+        </div>
+        <div class="market-subtitle panel-sub">RIG CABINET OR DRAFT TOKENS</div>
+        <div id="live-market-items" class="market-items-list">
+          <div id="shop-items" class="shop-items-grid"></div>
+        </div>
+      </div>
+
+      <!-- Board Telemetry & Token Legend -->
+      <div class="panel-box telemetry-box">
+        <div class="box-header">
+          <span><span data-obol-icon="crt" data-obol-size="15"></span> BOARD TELEMETRY</span>
+        </div>
+        <div class="telemetry-stats">
+          <div class="stat-line"><span>Coins on Bed:</span><strong id="stat-bed-coins">0</strong></div>
+          <div class="stat-line"><span>Teetering on Lip:</span><strong id="stat-teeter-coins" class="gold-text">0</strong></div>
+          <div class="stat-line"><span>Lost to Furnace:</span><strong id="stat-furnace-lost" class="red-text">0</strong></div>
+          <div class="stat-line"><span>Piston Push Cycle:</span><strong id="stat-push-count">#0</strong></div>
+          <div class="stat-line"><span>Best Combo Chain:</span><strong id="stat-best-combo" class="amber-text">x1.0</strong></div>
+        </div>
+      </div>
+    </aside>
+    </div>
+  </div>
+
+  <!-- MODAL: Diegetic Title & Starter Loadout Selection -->
+  <div id="start-modal" class="modal-backdrop">
+    <div class="modal-card start-card">
+      <div class="modal-header">
+        <div class="start-tag">IRON BOOTH #08 &bull; PURGATORY ARCADE</div>
+        <h2><span data-obol-icon="obol" data-obol-size="22"></span> OBOL: THE CURSED COIN PUSHER</h2>
+        <p>Every 3 minutes, The Collector demands his tribute. Drop cursed tokens through the Brass Pegs, trigger chain-reaction cascades over the Iron Lip, and rig the machine before the Furnace takes your fingers.</p>
+      </div>
+
+      <!-- Career Meta-Progression Record Bar -->
+      <div class="career-banner">
+        <div class="career-stat">
+          <span>DEEPEST QUOTA REACHED</span>
+          <strong id="career-best-quota" class="gold-text">QUOTA #1</strong>
+        </div>
+        <div class="career-stat">
+          <span>HIGHEST CHUTE COMBO</span>
+          <strong id="career-best-combo" class="amber-text">x1.0</strong>
+        </div>
+        <div class="career-stat">
+          <span>LIFETIME OBOLS PAID</span>
+          <strong id="career-total-obols" class="green-text">$0</strong>
+        </div>
+      </div>
+
+      <div class="quick-start-cta-wrap">
+        <button id="quick-start-btn" class="industrial-btn pay-btn quick-start-cta">
+          <span><span data-obol-icon="obol" data-obol-size="18"></span> INSERT COIN &amp; DROP NOW &mdash; ENTER BOOTH #08 [SPACE / CLICK]</span>
+        </button>
+      </div>
+
+      <!-- Torment Tier Selector (Ascension Pact Scaling) -->
+      <div class="torment-selector-bar" id="torment-selector" role="group" aria-label="Torment Tier Selector">
+        <div class="torment-selector-header">
+          <span class="torment-selector-title"><span data-obol-icon="skull" data-obol-size="14"></span> ASCENSION PACT (TORMENT TIER):</span>
+          <span class="torment-selector-desc" id="torment-active-desc">Standard Purgatory Debt (1.0x Quota Targets).</span>
+        </div>
+        <div class="torment-btn-group" id="torment-btn-group">
+          <button type="button" class="torment-tier-btn active" data-torment-tier="0">TORMENT 0: STANDARD</button>
+          <button type="button" class="torment-tier-btn" data-torment-tier="1">TORMENT I: USURER'S TAX</button>
+          <button type="button" class="torment-tier-btn" data-torment-tier="2">TORMENT II: IRON TILT</button>
+          <button type="button" class="torment-tier-btn" data-torment-tier="3">TORMENT III: ABYSSAL DEBT</button>
+        </div>
+      </div>
+
+      <h3 class="section-heading">OR SELECT A SPECIALIST SINNER'S STARTER POUCH (6 CLASSES):</h3>
+      <div id="loadout-grid" class="loadout-grid"></div>
+    </div>
+  </div>
+
+  <!-- MODAL: Quota Cleared / Contraband Draft Shop -->
+  <div id="draft-modal" class="modal-backdrop hidden">
+    <div class="modal-card draft-card">
+      <div class="modal-header">
+        <h2 id="draft-title">QUOTA #1 SATISFIED</h2>
+        <p id="draft-subtitle">The Collector retreats into the shadows. Choose 1 Cursed Token to add to your Pouch, and bolt Contraband onto the machine.</p>
+      </div>
+
+      <div class="draft-reward-summary" id="draft-reward-summary"></div>
+
+      <h3 class="section-heading">1. DRAFT A CURSED TOKEN INTO YOUR POUCH (FREE PICK)</h3>
+      <div id="draft-tokens-grid" class="draft-grid"></div>
+
+      <h3 class="section-heading">2. BLACK-MARKET CONTRABAND RELICS (OPTIONAL - USES WALLET <span id="modal-wallet-amount" class="green-text">$0</span>)</h3>
+      <div id="draft-relics-grid" class="draft-grid"></div>
+
+      <div class="modal-footer">
+        <button id="next-quota-btn" class="industrial-btn proceed-btn">
+          <span>DESCEND TO NEXT QUOTA &rarr;</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Pouch Inspector & Alchemical Token Branding -->
+  <div id="pouch-modal" class="modal-backdrop hidden">
+    <div class="modal-card start-card">
+      <div class="modal-header">
+        <h2><span data-obol-icon="pouch" data-obol-size="22"></span> CURSED POUCH &amp; ALCHEMICAL BRANDING</h2>
+        <p class="modal-subtitle">Tokens are drawn from your finite Pouch Bag. When the bag empties, all owned tokens reload automatically. Hover or inspect your active circulation below.</p>
+      </div>
+      <div id="pouch-inspector-grid">
+        <div id="pouch-grid" class="pouch-inspector-grid"></div>
+      </div>
+      <div class="modal-footer" style="display:flex;gap:10px;">
+        <button id="smelt-obol-btn" class="industrial-btn secondary-btn">
+          <span><span data-obol-icon="fire" data-obol-size="15"></span> SMELT 1 COPPER OBOL &amp; BUFF ALL COINS +$4 ($25)</span>
+        </button>
+        <button id="close-pouch-btn" class="industrial-btn">CLOSE POUCH</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: How to Play / Diegetic Field Manual -->
+  <div id="help-modal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2><span data-obol-icon="book" data-obol-size="20"></span> PURGATORY BOOTH MANUAL</h2>
+        <p>How to survive THE COLLECTOR and break the machine's math.</p>
+      </div>
+      <div class="manual-body">
+        <div class="manual-item">
+          <strong>1. PACHINKO DROP PEGS &amp; BONUS GATE:</strong> Click or <strong>HOLD</strong> along the top rail (or press <code>1-5</code>) to drop tokens through the Brass Pegs and moving <strong>BONUS GATE</strong>. Hitting the glowing <strong>Blessed Sigil Peg</strong> permanently buffs that coin's value by <code>x1.5</code>!
+        </div>
+        <div class="manual-item">
+          <strong>2. RELIQUARY PRIZE CHESTS &amp; GUTTERS:</strong> Shove heavy <strong>Reliquary Prize Chests</strong> over the <strong>Bottom Front Lip</strong> for a massive payout + a FREE Contraband Relic + 8s Overdrive! Coins pushed off the <strong>Left/Right Furnace Gutters</strong> burn up.
+        </div>
+        <div class="manual-item">
+          <strong>3. ALCHEMICAL BOARD FUSIONS &amp; SYNERGIES:</strong>
+          <ul>
+            <li><span data-obol-icon="alembic" data-obol-size="14"></span> <strong>Alchemical Fusions:</strong> Collide specific token pairs on the board (e.g., <code>Blast Cap + Voltaic Coil</code>, <code>Leech Penny + Silver Drachma</code>, or <code>Lodestone + Soul-Chain</code>) to fuse them into <strong>Mythic Tokens</strong>!</li>
+            <li><span data-obol-icon="star" data-obol-size="14"></span> <strong>Token Branding:</strong> Open <strong>INSPECT POUCH</strong> anytime to stamp token classes with <strong>Gilded</strong>, <strong>Lead-Core</strong>, or <strong>Twin-Echo</strong> seals.</li>
+            <li><span data-obol-icon="BLOOD" data-obol-size="14"></span> <strong>Leech Penny &amp; Blast Cap:</strong> Leech drains nearby Copper Obols (`+$2` growth); Blast Cap explodes after 3 pushes toward the front lip!</li>
+          </ul>
+        </div>
+        <div class="manual-item">
+          <strong>4. RIGHT-CLICK FINGER FLICK &amp; SLAMMING:</strong> <strong>Right-Click directly on any coin</strong> on the shelf or bed to flick it forward toward the lip (+10% Tilt Risk)! Or press <strong>SPACEBAR</strong> / click <strong>SLAM CABINET</strong> to shove the entire pile. Watch the <strong>Tilt Sensor</strong>—if it hits 100%, The Collector's Iron Guillotine severs one of your 3 fingers!
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="close-help-btn" class="industrial-btn">BACK TO THE MACHINE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Sinner's Grimoire (Achievements & Compendium) -->
+  <div id="grimoire-modal" class="modal-backdrop hidden">
+    <div class="modal-card start-card">
+      <div class="modal-header">
+        <h2><span data-obol-icon="book" data-obol-size="22"></span> SINNER'S GRIMOIRE &amp; ACHIEVEMENTS</h2>
+        <p class="modal-subtitle">Every unlocked Achievement permanently grants <strong class="green-text">+$5 Starting Wallet</strong> on all future runs. Inspect all 5 Alchemical Fusions, 24 Cursed Tokens &amp; Totems, and 16 Contraband Relics below.</p>
+      </div>
+
+      <div class="grimoire-tabs" id="grimoire-tabs">
+        <button class="grimoire-tab active" data-tab="ach"><span data-obol-icon="trophy" data-obol-size="15"></span> ACHIEVEMENTS</button>
+        <button class="grimoire-tab" data-tab="fusions"><span data-obol-icon="alembic" data-obol-size="15"></span> FUSIONS</button>
+        <button class="grimoire-tab" data-tab="tokens"><span data-obol-icon="obol" data-obol-size="15"></span> TOKENS</button>
+        <button class="grimoire-tab" data-tab="relics"><span data-obol-icon="gear" data-obol-size="15"></span> RELICS</button>
+      </div>
+
+      <div class="grimoire-tab-pane active" data-pane="ach">
+        <h3 class="section-heading"><span data-obol-icon="trophy" data-obol-size="16"></span> UNLOCKED PURGATORY ACHIEVEMENTS (<span id="grimoire-ach-count">0 / 14</span>):</h3>
+        <div id="grimoire-ach-grid" class="pouch-inspector-grid"></div>
+      </div>
+
+      <div class="grimoire-tab-pane" data-pane="fusions">
+        <h3 class="section-heading"><span data-obol-icon="alembic" data-obol-size="16"></span> ALCHEMICAL BOARD FUSIONS (5 MYTHIC RECIPES &bull; COLLIDE ON BED TO FUSE):</h3>
+        <div id="grimoire-fusions-grid">
+          <div id="grimoire-fusion-grid" class="pouch-inspector-grid"></div>
+        </div>
+      </div>
+
+      <div class="grimoire-tab-pane" data-pane="tokens">
+        <h3 class="section-heading"><span data-obol-icon="obol" data-obol-size="16"></span> CURSED TOKEN &amp; TOTEM COMPENDIUM (24 TOKENS):</h3>
+        <div id="grimoire-tokens-grid">
+          <div id="grimoire-token-grid" class="pouch-inspector-grid"></div>
+        </div>
+      </div>
+
+      <div class="grimoire-tab-pane" data-pane="relics">
+        <h3 class="section-heading"><span data-obol-icon="gear" data-obol-size="16"></span> CONTRABAND RELIC COMPENDIUM (16 RELICS):</h3>
+        <div id="grimoire-relics-grid">
+          <div id="grimoire-relic-grid" class="pouch-inspector-grid"></div>
+        </div>
+      </div>
+
+      <div class="modal-footer">
+        <button id="close-grimoire-btn" class="industrial-btn">CLOSE GRIMOIRE</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Quota #9 Final Boss Victory / Endless Ante -->
+  <div id="victory-modal" class="modal-backdrop hidden">
+    <div class="modal-card draft-card">
+      <div class="modal-header">
+        <div class="start-tag">CONTRACT SHATTERED &bull; QUOTA #9 CONQUERED</div>
+        <h2 style="color:#42e66c;"><span data-obol-icon="trophy" data-obol-size="22"></span> THE COLLECTOR IS BANKRUPT!</h2>
+        <p>You survived all 9 Purgatory Quotas and shattered the Collector's iron ledger. Claim your freedom now—or risk your remaining fingers in <strong>ENDLESS ANTE (QUOTA #10+)</strong>!</p>
+      </div>
+      <div id="victory-stats" class="gameover-stats"></div>
+      <div class="modal-footer" style="display:flex;gap:12px;">
+        <button id="continue-endless-btn" class="industrial-btn proceed-btn">
+          <span><span data-obol-icon="fire" data-obol-size="15"></span> STAY IN BOOTH: ENDLESS ANTE (QUOTA #10+) &rarr;</span>
+        </button>
+        <button id="victory-new-run-btn" class="industrial-btn secondary-btn">
+          <span><span data-obol-icon="chest" data-obol-size="15"></span> ESCAPE THE BOOTH &amp; NEW RUN</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: Game Over / Victory -->
+  <div id="gameover-modal" class="modal-backdrop hidden">
+    <div class="modal-card gameover-card">
+      <div class="modal-header">
+        <h2 id="gameover-title">CONSUMED BY THE FURNACE</h2>
+        <p id="gameover-reason">You failed to meet the Collector's Quota before time expired.</p>
+      </div>
+      <div id="gameover-stats" class="gameover-stats"></div>
+      <div class="modal-footer">
+        <button id="restart-run-btn" class="industrial-btn proceed-btn">
+          <span><span data-obol-icon="refresh" data-obol-size="15"></span> CHOOSE LOADOUT &amp; START NEW RUN</span>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Floating Diegetic Hardware Inspector Tooltip -->
+  <div id="obol-floating-tooltip" class="obol-floating-tooltip hidden" role="tooltip" aria-hidden="true"></div>
+
+  <script src="vendor/engine3d-bundle.js?v=20261105-s9"></script>
+  <script src="icons.js?v=20261105-s9"></script>
+  <script src="shaders.js?v=20261105-s9"></script>
+  <script src="audio.js?v=20261105-s9"></script>
+  <script src="tokens.js?v=20261105-s9"></script>
+  <script src="engine3d.js?v=20261105-s9"></script>
+  <script src="physics.js?v=20261105-s9"></script>
+  <script src="security.js?v=20261105-s9"></script>
+  <script src="game.js?v=20261105-s9"></script>
+</body>
+</html>

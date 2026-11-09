@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Press Kit — OBOL: The Cursed Coin Pusher (The Collector's Debt)</title>
+  <link rel="icon" type="image/png" href="../../brand-identity-and-media-pack/icons/favicon-64x64.png" />
+  <style>
+    :root {
+      --bg-obsidian: #0b0706;
+      --bg-panel: #140d0a;
+      --bg-card: #1c120e;
+      --brass: #d49a4e;
+      --gold: #ffd166;
+      --crimson: #ff3355;
+      --emerald: #2ceaa3;
+      --text-main: #f8f4ec;
+      --text-muted: #cbbba4;
+      --border-brass: rgba(212, 154, 78, 0.38);
+      --border-gold: rgba(255, 209, 102, 0.65);
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    html {
+      scroll-behavior: smooth;
+      background-color: var(--bg-obsidian);
+      color: var(--text-main);
+      font-family: "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.65;
+    }
+    body {
+      background:
+        radial-gradient(circle at 18% 10%, rgba(212, 154, 78, 0.10), transparent 45%),
+        radial-gradient(circle at 85% 80%, rgba(255, 51, 85, 0.08), transparent 45%),
+        var(--bg-obsidian);
+      min-height: 100vh;
+    }
+    a {
+      color: var(--gold);
+      text-decoration: none;
+      transition: color 0.15s ease;
+    }
+    a:hover {
+      color: var(--emerald);
+      text-decoration: underline;
+    }
+    .layout-wrapper {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 290px 1fr;
+      gap: 2.5rem;
+      padding: 2rem 2rem 5rem;
+    }
+    @media (max-width: 980px) {
+      .layout-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        position: static !important;
+      }
+    }
+    /* Sticky Left-Rail Navigation (Rami Ismail presskit() / feep standard) */
+    .sidebar {
+      position: sticky;
+      top: 1.5rem;
+      align-self: start;
+      background: var(--bg-panel);
+      border: 1px solid var(--border-brass);
+      border-radius: 12px;
+      padding: 1.5rem 1.25rem;
+      box-shadow: 0 14px 36px rgba(0, 0, 0, 0.65);
+    }
+    .sidebar-brand {
+      display: flex;
+      align-items: center;
+      gap: 0.85rem;
+      padding-bottom: 1.1rem;
+      margin-bottom: 1.1rem;
+      border-bottom: 1px solid var(--border-brass);
+    }
+    .sidebar-brand img {
+      width: 54px;
+      height: 54px;
+      border-radius: 10px;
+      border: 2px solid var(--gold);
+    }
+    .sidebar-brand h1 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.15rem;
+      letter-spacing: 0.04em;
+      color: var(--gold);
+      line-height: 1.2;
+    }
+    .sidebar-brand span {
+      display: block;
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-family: Consolas, monospace;
+      margin-top: 0.2rem;
+    }
+    .nav-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 0.3rem;
+    }
+    .nav-list a {
+      display: block;
+      padding: 0.48rem 0.75rem;
+      border-radius: 6px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-left: 3px solid transparent;
+      transition: all 0.15s ease;
+    }
+    .nav-list a:hover {
+      background: rgba(255, 209, 102, 0.09);
+      color: var(--gold);
+      border-left-color: var(--gold);
+      text-decoration: none;
+    }
+    .sidebar-cta {
+      margin-top: 1.25rem;
+      padding-top: 1.1rem;
+      border-top: 1px solid var(--border-brass);
+      display: flex;
+      flex-direction: column;
+      gap: 0.55rem;
+    }
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      background: linear-gradient(180deg, #ffd166 0%, #d49a4e 100%);
+      color: #120b08;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 0.65rem 1rem;
+      border-radius: 7px;
+      border: none;
+      cursor: pointer;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      transition: transform 0.12s ease, filter 0.12s ease;
+      text-decoration: none !important;
+    }
+    .btn:hover {
+      filter: brightness(1.08);
+      transform: translateY(-1px);
+      color: #120b08;
+    }
+    .btn-secondary {
+      background: var(--bg-card);
+      color: var(--gold);
+      border: 1px solid var(--border-gold);
+    }
+    .btn-secondary:hover {
+      background: rgba(255, 209, 102, 0.14);
+      color: var(--gold);
+    }
+    .btn-emerald {
+      background: linear-gradient(180deg, #2ceaa3 0%, #17b87c 100%);
+      color: #07130e;
+    }
+    /* Main Content Area */
+    .main-content {
+      display: flex;
+      flex-direction: column;
+      gap: 2.5rem;
+    }
+    .hero-banner-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-gold);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 18px 48px rgba(0, 0, 0, 0.75);
+    }
+    .hero-banner-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-bar {
+      padding: 1.15rem 1.5rem;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      background: linear-gradient(90deg, #160e0b 0%, #1f130f 100%);
+      border-top: 1px solid var(--border-brass);
+    }
+    .badge-pill {
+      display: inline-block;
+      padding: 0.28rem 0.7rem;
+      border-radius: 5px;
+      font-family: Consolas, monospace;
+      font-size: 0.78rem;
+      font-weight: 700;
+      background: rgba(255, 209, 102, 0.12);
+      color: var(--gold);
+      border: 1px solid var(--border-gold);
+    }
+    .section-card {
+      background: var(--bg-panel);
+      border: 1px solid var(--border-brass);
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .section-header {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      padding-bottom: 0.9rem;
+      margin-bottom: 1.4rem;
+      border-bottom: 2px solid var(--border-brass);
+    }
+    .section-header h2 {
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: 1.55rem;
+      color: var(--gold);
+      letter-spacing: 0.03em;
+      text-transform: uppercase;
+    }
+    .two-col-press {
+      display: grid;
+      grid-template-columns: 340px 1fr;
+      gap: 2rem;
+    }
+    @media (max-width: 860px) {
+      .two-col-press {
+        grid-template-columns: 1fr;
+      }
+    }
+    /* Factsheet Definition List */
+    .factsheet-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-radius: 10px;
+      padding: 1.35rem;
+    }
+    .factsheet-item {
+      margin-bottom: 1rem;
+      padding-bottom: 0.85rem;
+      border-bottom: 1px dashed rgba(212, 154, 78, 0.22);
+    }
+    .factsheet-item:last-child {
+      margin-bottom: 0;
+      padding-bottom: 0;
+      border-bottom: none;
+    }
+    .factsheet-label {
+      font-family: Consolas, monospace;
+      font-size: 0.76rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--gold);
+      margin-bottom: 0.2rem;
+    }
+    .factsheet-value {
+      font-size: 0.94rem;
+      color: var(--text-main);
+      font-weight: 600;
+    }
+    .copy-box {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-radius: 9px;
+      padding: 1.15rem 1.25rem;
+      margin-top: 0.9rem;
+      margin-bottom: 1.2rem;
+      position: relative;
+    }
+    .copy-box-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 0.55rem;
+      gap: 0.5rem;
+    }
+    .copy-box-title {
+      font-family: Consolas, monospace;
+      font-size: 0.8rem;
+      color: var(--emerald);
+      text-transform: uppercase;
+      font-weight: 700;
+    }
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 1.15rem;
+    }
+    .feature-item {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-left: 4px solid var(--gold);
+      border-radius: 8px;
+      padding: 1.1rem 1.2rem;
+    }
+    .feature-item h3 {
+      font-size: 1.02rem;
+      color: var(--gold);
+      margin-bottom: 0.4rem;
+    }
+    .feature-item p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+    .media-grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+      gap: 1.35rem;
+    }
+    .media-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.15rem;
+    }
+    .media-card {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+    }
+    .media-card img,
+    .media-card video {
+      width: 100%;
+      height: auto;
+      display: block;
+      background: #060403;
+    }
+    .media-caption {
+      padding: 0.8rem 1rem;
+      font-size: 0.84rem;
+      color: var(--text-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 0.75rem;
+      border-top: 1px solid rgba(212, 154, 78, 0.2);
+    }
+    .icon-showcase {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1.25rem;
+      align-items: center;
+      margin-top: 1rem;
+    }
+    .icon-tile {
+      background: var(--bg-card);
+      border: 1px solid var(--border-brass);
+      border-radius: 10px;
+      padding: 1rem;
+      text-align: center;
+      min-width: 135px;
+    }
+    .icon-tile img {
+      max-width: 96px;
+      height: auto;
+      margin-bottom: 0.5rem;
+      border-radius: 8px;
+    }
+    .quote-card {
+      background: var(--bg-card);
+      border-left: 4px solid var(--crimson);
+      border-radius: 8px;
+      padding: 1rem 1.25rem;
+      margin-bottom: 0.9rem;
+    }
+    .quote-card blockquote {
+      font-family: Georgia, serif;
+      font-size: 1.05rem;
+      color: var(--text-main);
+      margin-bottom: 0.35rem;
+    }
+    .quote-card cite {
+      font-family: Consolas, monospace;
+      font-size: 0.8rem;
+      color: var(--gold);
+      font-style: normal;
+    }
+    .dmca-banner {
+      background: linear-gradient(135deg, rgba(44, 234, 163, 0.12) 0%, rgba(20, 13, 10, 0.95) 100%);
+      border: 2px solid var(--emerald);
+      border-radius: 10px;
+      padding: 1.4rem;
+    }
+  </style>
+</head>
+<body>
+  <div class="layout-wrapper">
+    <!-- Left-Rail Sticky Navigation -->
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <img src="../../brand-identity-and-media-pack/icons/icon-512x512.png" alt="OBOL Collector Medallion Icon" />
+        <div>
+          <h1>OBOL: THE CURSED COIN PUSHER</h1>
+          <span>PRESSKIT() &amp; CREATOR HUB</span>
+        </div>
+      </div>
+      <nav>
+        <ul class="nav-list">
+          <li><a href="#factsheet">1. Factsheet</a></li>
+          <li><a href="#description">2. Description &amp; Pitch</a></li>
+          <li><a href="#history-architecture">3. History &amp; 3-Engine Parity</a></li>
+          <li><a href="#features">4. Key Features</a></li>
+          <li><a href="#videos-shorts">5. Videos &amp; 30 Shorts</a></li>
+          <li><a href="#screenshots">6. High-Res Screenshots (10)</a></li>
+          <li><a href="#gifs">7. Animated GIFs (4)</a></li>
+          <li><a href="#logos-icons">8. Logos, Icons &amp; Banners</a></li>
+          <li><a href="#quotes-hooks">9. Selected Hooks &amp; Angles</a></li>
+          <li><a href="#monetization">10. DMCA &amp; Streamer Permission</a></li>
+          <li><a href="#contact">11. Contact &amp; Keys</a></li>
+        </ul>
+      </nav>
+      <div class="sidebar-cta">
+        <button class="btn" onclick="copyText('short-pitch-text', this)">Copy Short Pitch</button>
+        <button class="btn btn-emerald" onclick="copyText('dmca-clearance-text', this)">Copy DMCA Clearance</button>
+        <a class="btn btn-secondary" href="../../brand-identity-and-media-pack/shared-brand-manifest.json" download>Brand Manifest JSON</a>
+      </div>
+    </aside>
+
+    <!-- Main Press Kit Body -->
+    <main class="main-content">
+      <!-- Hero Banner -->
+      <header class="hero-banner-card">
+        <img src="./presskit-hero-banner-1920x1080.png" alt="OBOL: The Cursed Coin Pusher Official Press Kit Hero Banner" />
+        <div class="hero-bar">
+          <div>
+            <span class="badge-pill">RELEASE STATUS: AVAILABLE NOW (V1.0 COMMERCIAL MASTER)</span>
+            <span class="badge-pill">ENGINES: WEBGL2 + GODOT 4.7 + UNITY 6</span>
+          </div>
+          <span style="font-family: Consolas, monospace; font-size: 0.82rem; color: var(--emerald);">
+            100% DMCA-SAFE PROCEDURAL AUDIO • ZERO EMBARGO
+          </span>
+        </div>
+      </header>
+
+      <!-- Factsheet + Description -->
+      <section class="section-card" id="factsheet">
+        <div class="section-header">
+          <h2>Factsheet &amp; Description</h2>
+          <span class="badge-pill">RAMI ISMAIL PRESSKIT() STANDARD</span>
+        </div>
+        <div class="two-col-press">
+          <!-- Factsheet Column -->
+          <div class="factsheet-box">
+            <div class="factsheet-item">
+              <div class="factsheet-label">Developer</div>
+              <div class="factsheet-value">Occult Cabinet Foundry (Independent Studio)</div>
+            </div>
+            <div class="factsheet-item">
+              <div class="factsheet-label">Official Title</div>
+              <div class="factsheet-value">OBOL: The Cursed Coin Pusher (Subtitled: The Collector's Debt)</div>
+            </div>
+            <div class="factsheet-item">
+              <div class="factsheet-label">Release Date</div>
+              <div class="factsheet-value">Available Now — V1.0 Multi-Engine Commercial Release (Zero Embargo)</div>
+            </div>
+            <div class="factsheet-item">
+              <div class="factsheet-label">Platforms</div>
+              <div class="factsheet-value">PC (Windows Native 64-bit via Steam / Itch.io) &amp; Instant Zero-Install Desktop WebGL2 Browser (Itch.io / Newgrounds / Game Jolt / CrazyGames / Poki)</div>
+            </div>
+            <div class="factsheet-item">
+              <div class="factsheet-label">Engine Architecture</div>
+              <div class="factsheet-value">Triple-Engine Parity: Three.js WebGL2 (240Hz) + Godot 4.7 Native (Vulkan Forward+) + Unity 6 Native (PhysX 240Hz)</div>
+            </div>
+            <div class="factsheet-item">
+              <div class="factsheet-label">Genre / Tags</div>
+              <div class="factsheet-value">Occult Arcade Roguelike, Physics Deckbuilder, Coin Pusher, Synergies, Dark Fantasy, Horror Comedy</div>
+            </div>
+            <div class="factsheet-item">
+              <div class="factsheet-label">Price &amp; Demo</div>
+              <div class="factsheet-value">$6.99 USD (Desktop Native) / Free Instant WebGL2 Browser Edition</div>
+            </div>
+            <div class="factsheet-item">
+              <div class="factsheet-label">Camera Controls</div>
+              <div class="factsheet-value">Live Hotkeys [1] Playfield, [2] Peephole, [3] Contraband, [4] Guillotine, [5] Theater Overview</div>
+            </div>
+          </div>
+
+          <!-- Description Column -->
+          <div id="description">
+            <h3 style="color: var(--gold); font-family: Georgia, serif; font-size: 1.25rem; margin-bottom: 0.6rem;">
+              Elevator Pitch (One-Click Copy for Press &amp; Video Descriptions)
+            </h3>
+            <div class="copy-box">
+              <div class="copy-box-header">
+                <span class="copy-box-title">Short Elevator Pitch (48 Words)</span>
+                <button class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.76rem;" onclick="copyText('short-pitch-text', this)">Copy Text</button>
+              </div>
+              <p id="short-pitch-text" style="font-size: 0.96rem; color: var(--text-main);">
+                OBOL: The Cursed Coin Pusher locks Balatro-scale synergy math and Buckshot Roulette's grim anatomical stakes inside an 1890s cast-iron penny-arcade cabinet. Drop cursed tokens across a 240Hz physical ledge, trigger 5 board-level Mythic Fusions, bolt 14 Contraband hardware rigs, and pay The Collector before the 3D Finger Guillotine drops.
+              </p>
+            </div>
+
+            <div class="copy-box">
+              <div class="copy-box-header">
+                <span class="copy-box-title">Full Press &amp; Storefront Description</span>
+                <button class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.76rem;" onclick="copyText('long-desc-text', this)">Copy Text</button>
+              </div>
+              <div id="long-desc-text" style="font-size: 0.93rem; color: var(--text-muted); display: flex; flex-direction: column; gap: 0.65rem;">
+                <p>
+                  You wake in a soot-stained 1890s crypt booth chained to an iron coin-pusher cabinet. Behind the brass peephole sits The Collector—an articulated bronze-skull automaton watching your ledger tick toward 00:00. Your left hand rests inside a 3-finger mahogany pillory beneath a honed steel guillotine blade.
+                </p>
+                <p>
+                  Every drop is simulated at a deterministic 240Hz physics substep. Coins don't just slide—they teeter over the bevelled brass overhang lip, arc with Voltaic lightning chains, siphon Blood-Pact multipliers, and fuse directly on the playfield into 5 oversized Mythic Relics when three matching tokens collide.
+                </p>
+                <p>
+                  Between escalating Quotas ($445, $920, $1,950+), open the Black-Market Draft Shop to bolt 14 physical Contraband devices onto the cabinet frame—from Brass Guardrails that rebound gutter losses to Piston Overclocks and Blood Magnets—and stamp tokens in the Alchemical Furnace with Gilded (2x Value), Lead-Core (+80% Mass), Volatile, or Twin-Echo brands. Miss a quota, and you choose which finger to sacrifice for a permanent blood-cursed buff—until all 3 fingers are gone.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- History & 3-Engine Architecture -->
+      <section class="section-card" id="history-architecture">
+        <div class="section-header">
+          <h2>History &amp; Triple-Engine Architecture</h2>
+          <span class="badge-pill">WEBGL2 + GODOT 4.7 + UNITY 6</span>
+        </div>
+        <p style="color: var(--text-muted); margin-bottom: 1.2rem;">
+          <strong>OBOL: The Cursed Coin Pusher</strong> began with a simple design question: <em>Why do roguelike score-chasers almost always live on flat 2D card tables instead of heavy, tactile mechanical machines?</em> To guarantee zero-friction accessibility for browser players and streamers while delivering uncompromising native desktop fidelity, we engineered OBOL simultaneously across three production runtimes sharing an identical 240Hz deterministic physics specification and 25-category procedural metal-plate synthesizer:
+        </p>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>1. Three.js WebGL2 Browser Edition</h3>
+            <p>Instant zero-install play inside any desktop browser at 60 FPS with a 240Hz fixed physics accumulator, PBR metalness/roughness shaders, and WebAudio physical-modeling synthesis. Perfect for live stream challenges and instant press evaluation.</p>
+          </div>
+          <div class="feature-item">
+            <h3>2. Godot 4.7 Native (Vulkan Forward+)</h3>
+            <p>Standalone 64-bit Windows executable powered by Godot 4.7's Vulkan Forward+ renderer, ACES Filmic tonemapping, SubViewport Collector Peephole, and native 44.1kHz procedural AudioStreamGenerator foley.</p>
+          </div>
+          <div class="feature-item">
+            <h3>3. Unity 6 Native (PhysX 240Hz)</h3>
+            <p>Standalone 64-bit Windows Direct3D11 build running Unity 6000.3 LTS at a locked <code>fixedDeltaTime = 1/240s</code> with 16 solver iterations, procedural metallic cookie textures, and sample-accurate <code>OnAudioFilterRead</code> acoustics.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Key Features -->
+      <section class="section-card" id="features">
+        <div class="section-header">
+          <h2>Key Gameplay Features</h2>
+          <span class="badge-pill">VERIFIED TELEMETRY &amp; DEPTH</span>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>240Hz Deterministic Coin Cascades</h3>
+            <p>Every brass obol, heavy lead anchor, and cursed skull medallion obeys high-frequency rigid-body friction, mass transfer, and overhang lip teetering.</p>
+          </div>
+          <div class="feature-item">
+            <h3>5 Secret Board-Level Mythic Fusions</h3>
+            <p>Collide 3 matching specialist tokens on the shelf to transmute them mid-cascade into oversized Mythic Relics with run-warping passive auras.</p>
+          </div>
+          <div class="feature-item">
+            <h3>3D Finger Collateral Guillotine</h3>
+            <p>Fail a quota and sacrifice your Index, Middle, or Ring finger on Camera [4]. Survive with 2 remaining fingers while gaining desperate blood-pact multipliers.</p>
+          </div>
+          <div class="feature-item">
+            <h3>14 Diegetic Contraband Hardware Rigs</h3>
+            <p>Bolt physical steampunk contraptions onto the cabinet rails: Brass Guardrails, Piston Overclock, Blood Magnet, Tesla Arc Coils, and Gravity Wells.</p>
+          </div>
+          <div class="feature-item">
+            <h3>4 Alchemical Furnace Token Brands</h3>
+            <p>Permanently stamp tokens in your pouch with Gilded (2x payout), Lead-Core (+80% pushing mass), Volatile (shockwave), or Twin-Echo duplication.</p>
+          </div>
+          <div class="feature-item">
+            <h3>6 Sinner Loadouts &amp; 4 Torment Tiers</h3>
+            <p>Unlock 6 asymmetric starting decks, 33 Sinner's Grimoire compendium entries, and 14 Career Achievements granting up to +$70 permanent starting capital.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Videos & 30 Shorts -->
+      <section class="section-card" id="videos-shorts">
+        <div class="section-header">
+          <h2>Trailers, Gameplay Previews &amp; 30 Vertical Shorts</h2>
+          <span class="badge-pill">1080P60 MP4 / WEBM + 30 SHORTS</span>
+        </div>
+        <div class="media-grid-2">
+          <div class="media-card">
+            <video controls preload="metadata" poster="../../brand-identity-and-media-pack/thumbnails/landscape-1920x1080-16x9.png">
+              <source src="../../brand-identity-and-media-pack/trailers/obol-official-gameplay-trailer-1080p.mp4" type="video/mp4" />
+              <source src="../../brand-identity-and-media-pack/trailers/obol-official-gameplay-trailer-1080p.webm" type="video/webm" />
+            </video>
+            <div class="media-caption">
+              <span><strong>Official 1080p Gameplay Trailer</strong> (MP4 / WebM + Procedural Foley Audio)</span>
+              <a href="../../brand-identity-and-media-pack/trailers/obol-official-gameplay-trailer-1080p.mp4" download>Download MP4</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <video controls loop muted preload="metadata" poster="../../brand-identity-and-media-pack/screenshots/01-playfield-cascade-synergies-1920x1080.png">
+              <source src="../../brand-identity-and-media-pack/trailers/obol-hover-video-preview-16x9.mp4" type="video/mp4" />
+              <source src="../../brand-identity-and-media-pack/trailers/obol-hover-video-preview-16x9.webm" type="video/webm" />
+            </video>
+            <div class="media-caption">
+              <span><strong>Storefront Hover Gameplay Loop</strong> (16:9 Fast Cascade &amp; Camera Cuts)</span>
+              <a href="../../brand-identity-and-media-pack/trailers/obol-hover-video-preview-16x9.mp4" download>Download MP4</a>
+            </div>
+          </div>
+        </div>
+        <div class="copy-box" style="margin-top: 1.35rem; margin-bottom: 0;">
+          <div class="copy-box-header">
+            <span class="copy-box-title">30 Vertical Shorts Library (YouTube Shorts / TikTok / Reels Remix Pack)</span>
+            <a class="btn btn-secondary" style="padding: 0.35rem 0.75rem; font-size: 0.76rem;" href="../../youtube-shorts-campaign/YOUTUBE_SHORTS_30_MASTER_CAMPAIGN.md">Open 30-Shorts Index</a>
+          </div>
+          <p style="font-size: 0.9rem; color: var(--text-muted);">
+            Content creators and press outlets have full blanket permission to clip, react to, green-screen over, or re-upload any of our <strong>30 vertical 1080x1920 Shorts</strong> located in <code>../../youtube-shorts-campaign/</code> (covering Guillotine close-calls, Mythic Fusions, Contraband builds, and Collector jump-cuts).
+          </p>
+        </div>
+      </section>
+
+      <!-- High-Res Screenshots -->
+      <section class="section-card" id="screenshots">
+        <div class="section-header">
+          <h2>High-Resolution Screenshots (1920x1080 PNG)</h2>
+          <span class="badge-pill">10 UNCOMPRESSED IN-GAME CAPTURES</span>
+        </div>
+        <div class="media-grid-2">
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/01-playfield-cascade-synergies-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/01-playfield-cascade-synergies-1920x1080.png" alt="01 Playfield Cascade Synergies" />
+            </a>
+            <div class="media-caption">
+              <span>01 — Playfield View [1]: 240Hz Coin Cascades, Voltaic Lightning &amp; Blood-Leech Siphons</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/01-playfield-cascade-synergies-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/02-walkup-crypt-booth-theater-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/02-walkup-crypt-booth-theater-1920x1080.png" alt="02 Walkup Crypt Booth" />
+            </a>
+            <div class="media-caption">
+              <span>02 — Walk-Up Crypt Booth [5]: Full Diegetic 1890s Cabinet &amp; Octagonal Pushbutton Deck</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/02-walkup-crypt-booth-theater-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/03-collector-peephole-clockwork-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/03-collector-peephole-clockwork-1920x1080.png" alt="03 Collector Peephole Clockwork" />
+            </a>
+            <div class="media-caption">
+              <span>03 — Collector Peephole [2]: Articulated Bronze Skull, Claws, Bourdon Gauges &amp; Gears</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/03-collector-peephole-clockwork-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/04-contraband-relic-rack-3d-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/04-contraband-relic-rack-3d-1920x1080.png" alt="04 Contraband Relic Rack 3D" />
+            </a>
+            <div class="media-caption">
+              <span>04 — Contraband Relic Rack [3]: Sculpted Hardware Sockets (Guardrails, Overclock, Tesla)</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/04-contraband-relic-rack-3d-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/05-finger-collateral-guillotine-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/05-finger-collateral-guillotine-1920x1080.png" alt="05 Finger Collateral Guillotine" />
+            </a>
+            <div class="media-caption">
+              <span>05 — Finger Collateral Guillotine [4]: 3 Fingers in the Pillory Under the Steel Blade</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/05-finger-collateral-guillotine-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/06-lip-closeup-bullion-vault-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/06-lip-closeup-bullion-vault-1920x1080.png" alt="06 Lip Closeup Bullion Vault" />
+            </a>
+            <div class="media-caption">
+              <span>06 — Bullion Vault Lip Closeup: Teetering High-Value Tokens &amp; Reliquary Chest</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/06-lip-closeup-bullion-vault-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/07-black-market-draft-shop-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/07-black-market-draft-shop-1920x1080.png" alt="07 Black Market Draft Shop" />
+            </a>
+            <div class="media-caption">
+              <span>07 — Black-Market Draft Shop: Draft Cursed Token Packs &amp; Bolt Contraband Rigs</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/07-black-market-draft-shop-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/08-cursed-pouch-alchemical-branding-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/08-cursed-pouch-alchemical-branding-1920x1080.png" alt="08 Cursed Pouch Alchemical Branding" />
+            </a>
+            <div class="media-caption">
+              <span>08 — Sinner's Pouch &amp; Furnace Smelter: Gilded (2x), Lead-Core (+80% Mass) &amp; Echo Brands</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/08-cursed-pouch-alchemical-branding-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/09-sinners-grimoire-compendium-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/09-sinners-grimoire-compendium-1920x1080.png" alt="09 Sinners Grimoire Compendium" />
+            </a>
+            <div class="media-caption">
+              <span>09 — The Sinner's Grimoire: 14 Achievements (+$70 Wallet), Mythic Fusions &amp; 25 Tokens</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/09-sinners-grimoire-compendium-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="../../brand-identity-and-media-pack/screenshots/10-starter-loadouts-torment-tiers-1920x1080.png" target="_blank">
+              <img src="../../brand-identity-and-media-pack/screenshots/10-starter-loadouts-torment-tiers-1920x1080.png" alt="10 Starter Loadouts Torment Tiers" />
+            </a>
+            <div class="media-caption">
+              <span>10 — Sinner's Debt Loadouts: 6 Specialist Starter Pouches &amp; 4 Purgatory Torment Tiers</span>
+              <a href="../../brand-identity-and-media-pack/screenshots/10-starter-loadouts-torment-tiers-1920x1080.png" download>PNG</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Animated GIFs -->
+      <section class="section-card" id="gifs">
+        <div class="section-header">
+          <h2>Animated Gameplay GIFs (Embed-Ready for Articles &amp; Social)</h2>
+          <span class="badge-pill">4 HIGH-FRAMERATE LOOPS</span>
+        </div>
+        <div class="media-grid-2">
+          <div class="media-card">
+            <img src="../../brand-identity-and-media-pack/gifs/gif-1-avalanche-cascade-and-synergies.gif" alt="GIF 1 Avalanche Cascade and Synergies" />
+            <div class="media-caption">
+              <span>GIF 1 — 240Hz Avalanche Cascade, Voltaic Arcs &amp; Combo Popups</span>
+              <a href="../../brand-identity-and-media-pack/gifs/gif-1-avalanche-cascade-and-synergies.gif" download>Download GIF</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="../../brand-identity-and-media-pack/gifs/gif-2-collector-peephole-and-guillotine.gif" alt="GIF 2 Collector Peephole and Guillotine" />
+            <div class="media-caption">
+              <span>GIF 2 — Diegetic Camera Cuts: Collector Peephole [2] &amp; Finger Guillotine [4]</span>
+              <a href="../../brand-identity-and-media-pack/gifs/gif-2-collector-peephole-and-guillotine.gif" download>Download GIF</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="../../brand-identity-and-media-pack/gifs/gif-3-draft-shop-and-alchemical-branding.gif" alt="GIF 3 Draft Shop and Alchemical Branding" />
+            <div class="media-caption">
+              <span>GIF 3 — Black-Market Draft Shop, Alchemical Branding &amp; Sinner's Grimoire</span>
+              <a href="../../brand-identity-and-media-pack/gifs/gif-3-draft-shop-and-alchemical-branding.gif" download>Download GIF</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <img src="../../brand-identity-and-media-pack/gifs/itch-cover-animated-630x500.gif" alt="GIF 4 Animated Store Cover 630x500" />
+            <div class="media-caption">
+              <span>GIF 4 — Animated Storefront Capsule (630x500 Loop)</span>
+              <a href="../../brand-identity-and-media-pack/gifs/itch-cover-animated-630x500.gif" download>Download GIF</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Logos, Icons & Creator Thumbnail Kit -->
+      <section class="section-card" id="logos-icons">
+        <div class="section-header">
+          <h2>Logos, Medallion Icons &amp; Streamer Thumbnail Kit</h2>
+          <span class="badge-pill">CREATOR OVERLAYS &amp; BRAND SUITE</span>
+        </div>
+        <div class="media-grid-2">
+          <div class="media-card">
+            <a href="./creator-thumbnail-overlay-kit-1920x1080.png" target="_blank">
+              <img src="./creator-thumbnail-overlay-kit-1920x1080.png" alt="Creator Thumbnail and Stream Overlay Kit" />
+            </a>
+            <div class="media-caption">
+              <span><strong>YouTuber / Twitch Thumbnail &amp; Camera Reference Sheet</strong> (1920x1080)</span>
+              <a href="./creator-thumbnail-overlay-kit-1920x1080.png" download>Download PNG</a>
+            </div>
+          </div>
+          <div class="media-card">
+            <a href="./press-logos-and-medallion-sheet-1600x900.png" target="_blank">
+              <img src="./press-logos-and-medallion-sheet-1600x900.png" alt="Brand Identity Logos and Multi-Engine Sheet" />
+            </a>
+            <div class="media-caption">
+              <span><strong>Brand Identity, Palette &amp; Multi-Engine Fact Card</strong> (1600x900)</span>
+              <a href="./press-logos-and-medallion-sheet-1600x900.png" download>Download PNG</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="icon-showcase">
+          <div class="icon-tile">
+            <img src="../../brand-identity-and-media-pack/icons/icon-512x512.png" alt="Icon 512x512" />
+            <div class="factsheet-label">512x512 Master</div>
+            <a href="../../brand-identity-and-media-pack/icons/icon-512x512.png" download>Download PNG</a>
+          </div>
+          <div class="icon-tile">
+            <img src="../../brand-identity-and-media-pack/icons/icon-256x256.png" alt="Icon 256x256" />
+            <div class="factsheet-label">256x256 Icon</div>
+            <a href="../../brand-identity-and-media-pack/icons/icon-256x256.png" download>Download PNG</a>
+          </div>
+          <div class="icon-tile">
+            <img src="../../brand-identity-and-media-pack/icons/icon-180x180.png" alt="Icon 180x180" />
+            <div class="factsheet-label">180x180 Touch</div>
+            <a href="../../brand-identity-and-media-pack/icons/icon-180x180.png" download>Download PNG</a>
+          </div>
+          <div class="icon-tile">
+            <img src="../../brand-identity-and-media-pack/icons/icon-100x100.png" alt="Icon 100x100" />
+            <div class="factsheet-label">100x100 Badge</div>
+            <a href="../../brand-identity-and-media-pack/icons/icon-100x100.png" download>Download PNG</a>
+          </div>
+          <div class="icon-tile">
+            <img src="../../brand-identity-and-media-pack/icons/favicon-64x64.png" alt="Favicon 64x64" />
+            <div class="factsheet-label">64x64 Favicon</div>
+            <a href="../../brand-identity-and-media-pack/icons/favicon-64x64.png" download>Download PNG</a>
+          </div>
+          <div class="icon-tile">
+            <img src="../../brand-identity-and-media-pack/thumbnails/portrait-800x1200-2x3.png" alt="Portrait Box Art 800x1200" />
+            <div class="factsheet-label">800x1200 Box Art</div>
+            <a href="../../brand-identity-and-media-pack/thumbnails/portrait-800x1200-2x3.png" download>Download PNG</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Selected Quotes / Editorial Hooks -->
+      <section class="section-card" id="quotes-hooks">
+        <div class="section-header">
+          <h2>Selected Editorial Hooks &amp; Coverage Angles</h2>
+          <span class="badge-pill">READY FOR HEADLINES &amp; INTROS</span>
+        </div>
+        <div class="quote-card">
+          <blockquote>"What happens when you fuse Balatro's multiplicative deckbuilding with Buckshot Roulette's anatomical dread inside a 240Hz mechanical penny-arcade coin pusher?"</blockquote>
+          <cite>— Primary Design Hook / Roguelike Synergy Angle</cite>
+        </div>
+        <div class="quote-card">
+          <blockquote>"Miss your $445 debt quota and the run doesn't just end—Camera [4] swings to the mahogany pillory where you choose which of your three fingers to feed the steel guillotine in exchange for a desperate blood-pact multiplier."</blockquote>
+          <cite>— High-Stakes Tension &amp; Streamer Reaction Hook</cite>
+        </div>
+        <div class="quote-card">
+          <blockquote>"Built simultaneously across Three.js WebGL2, Godot 4.7 Vulkan Forward+, and Unity 6 PhysX 240Hz—with 100% of its metallic coin-drop clatter synthesized in real time via procedural physical-modeling modal resonators."</blockquote>
+          <cite>— Technical Architecture &amp; Procedural Audio Hook</cite>
+        </div>
+      </section>
+
+      <!-- Monetization & Streamer Permission -->
+      <section class="section-card" id="monetization">
+        <div class="section-header">
+          <h2>Monetization &amp; DMCA-Free Streamer Clearance</h2>
+          <span class="badge-pill">100% YOUTUBE / TWITCH / TIKTOK SAFE</span>
+        </div>
+        <div class="dmca-banner">
+          <div class="copy-box-header">
+            <span class="copy-box-title" style="font-size: 0.9rem;">Official Blanket Monetization &amp; DMCA-Free Audio Certificate</span>
+            <button class="btn btn-emerald" style="padding: 0.4rem 0.85rem; font-size: 0.78rem;" onclick="copyText('dmca-clearance-text', this)">Copy Clearance Notice</button>
+          </div>
+          <p id="dmca-clearance-text" style="font-size: 0.95rem; color: var(--text-main); margin-top: 0.4rem;">
+            Occult Cabinet Foundry grants irrevocable worldwide permission to all YouTubers, Twitch streamers, TikTok/Shorts creators, VTubers, and press outlets to stream, record, remix, clip, and fully monetize videos featuring OBOL: The Cursed Coin Pusher (via AdSense, sponsorships, SuperChats, Twitch Bits, or Patreon). Every sound effect and ambient drone in OBOL is synthesized mathematically in real time using our custom 25-category procedural metal-plate physical-modeling engine—containing ZERO licensed music tracks, ZERO third-party sample packs, and ZERO Content-ID / DMCA strike risks.
+          </p>
+        </div>
+      </section>
+
+      <!-- Contact & Key Requests -->
+      <section class="section-card" id="contact">
+        <div class="section-header">
+          <h2>Press Contact, Review Keys &amp; Campaign Tags</h2>
+          <span class="badge-pill">INSTANT ACCESS &amp; KEYMAILER / LURKIT</span>
+        </div>
+        <div class="feature-grid">
+          <div class="feature-item">
+            <h3>Press &amp; Creator Inquiries</h3>
+            <p>Direct Review Builds, Developer Interviews, and Custom Build Seeds:<br /><strong>press@occultcabinetfoundry.com</strong></p>
+          </div>
+          <div class="feature-item">
+            <h3>Keymailer / Lurkit / Woovit</h3>
+            <p>Instant automated Steam &amp; Itch.io key fulfillment active for verified roguelike, deckbuilder, and horror-indie creators.</p>
+          </div>
+          <div class="feature-item">
+            <h3>Play Immediately (No Key Wait)</h3>
+            <p>Launch the full WebGL2 240Hz build in any desktop browser or grab the standalone Windows Godot 4.7 / Unity 6 native builds from the release folder.</p>
+          </div>
+        </div>
+        <div class="copy-box" style="margin-top: 1.2rem; margin-bottom: 0;">
+          <div class="copy-box-header">
+            <span class="copy-box-title">Keymailer / Lurkit / YouTube SEO Tag String (One-Click Copy)</span>
+            <button class="btn" style="padding: 0.35rem 0.75rem; font-size: 0.76rem;" onclick="copyText('seo-tags-text', this)">Copy Tags</button>
+          </div>
+          <p id="seo-tags-text" style="font-family: Consolas, monospace; font-size: 0.85rem; color: var(--gold);">
+            roguelike, deckbuilder, coin pusher, occult horror, balatro-like, buckshot roulette, physics simulation, synergy builder, dark fantasy, arcade roguelite, indie games, cloverpit, luck be a landlord, inscryption
+          </p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script>
+    function copyText(elementId, btnEl) {
+      const el = document.getElementById(elementId);
+      if (!el) return;
+      const text = el.innerText.trim();
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(text).then(() => {
+          showCopied(btnEl);
+        }).catch(() => {
+          fallbackCopy(text, btnEl);
+        });
+      } else {
+        fallbackCopy(text, btnEl);
+      }
+    }
+    function fallbackCopy(text, btnEl) {
+      const ta = document.createElement('textarea');
+      ta.value = text;
+      document.body.appendChild(ta);
+      ta.select();
+      document.execCommand('copy');
+      document.body.removeChild(ta);
+      showCopied(btnEl);
+    }
+    function showCopied(btnEl) {
+      if (!btnEl) return;
+      const orig = btnEl.innerText;
+      btnEl.innerText = 'COPIED TO CLIPBOARD!';
+      setTimeout(() => {
+        btnEl.innerText = orig;
+      }, 1800);
+    }
+  </script>
+</body>
+</html>

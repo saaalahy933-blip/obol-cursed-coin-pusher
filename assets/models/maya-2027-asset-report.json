@@ -1,0 +1,300 @@
+{
+  "dccTool": "Autodesk Maya 2027 Standalone (mayapy 3.13)",
+  "mayaVersion": "2027",
+  "rigsAuthored": [
+    "CollectorJawRig",
+    "CollectorClawHandRig",
+    "MintManometerRig"
+  ],
+  "meshCount": 22,
+  "totalTriangles": 4692,
+  "totalVertices": 2390,
+  "meshes": [
+    {
+      "name": "SM_ClawKnuckleBar",
+      "triangles": 60,
+      "vertices": 32,
+      "bbox": [
+        -0.725,
+        -0.51,
+        0.26,
+        0.725,
+        -0.19,
+        0.58
+      ]
+    },
+    {
+      "name": "SM_ClawPalm",
+      "triangles": 508,
+      "vertices": 256,
+      "bbox": [
+        -0.7,
+        -0.45,
+        -0.5,
+        0.7,
+        0.45,
+        0.5
+      ]
+    },
+    {
+      "name": "SM_ClawProximal_1",
+      "triangles": 44,
+      "vertices": 24,
+      "bbox": [
+        -0.605,
+        -1.0751,
+        0.3043,
+        -0.355,
+        -0.2849,
+        0.7957
+      ]
+    },
+    {
+      "name": "SM_ClawProximal_2",
+      "triangles": 44,
+      "vertices": 24,
+      "bbox": [
+        -0.285,
+        -1.0751,
+        0.3043,
+        -0.035,
+        -0.2849,
+        0.7957
+      ]
+    },
+    {
+      "name": "SM_ClawProximal_3",
+      "triangles": 44,
+      "vertices": 24,
+      "bbox": [
+        0.035,
+        -1.0751,
+        0.3043,
+        0.285,
+        -0.2849,
+        0.7957
+      ]
+    },
+    {
+      "name": "SM_ClawProximal_4",
+      "triangles": 44,
+      "vertices": 24,
+      "bbox": [
+        0.355,
+        -1.0751,
+        0.3043,
+        0.605,
+        -0.2849,
+        0.7957
+      ]
+    },
+    {
+      "name": "SM_ClawTalon_1",
+      "triangles": 22,
+      "vertices": 13,
+      "bbox": [
+        -0.605,
+        -1.4213,
+        0.4424,
+        -0.355,
+        -0.7718,
+        0.8017
+      ]
+    },
+    {
+      "name": "SM_ClawTalon_2",
+      "triangles": 22,
+      "vertices": 13,
+      "bbox": [
+        -0.285,
+        -1.4213,
+        0.4424,
+        -0.035,
+        -0.7718,
+        0.8017
+      ]
+    },
+    {
+      "name": "SM_ClawTalon_3",
+      "triangles": 22,
+      "vertices": 13,
+      "bbox": [
+        0.035,
+        -1.4213,
+        0.4424,
+        0.285,
+        -0.7718,
+        0.8017
+      ]
+    },
+    {
+      "name": "SM_ClawTalon_4",
+      "triangles": 22,
+      "vertices": 13,
+      "bbox": [
+        0.355,
+        -1.4213,
+        0.4424,
+        0.605,
+        -0.7718,
+        0.8017
+      ]
+    },
+    {
+      "name": "SM_CollectorMandible",
+      "triangles": 636,
+      "vertices": 320,
+      "bbox": [
+        -0.95,
+        -0.63,
+        1.055,
+        0.95,
+        -0.01,
+        2.105
+      ]
+    },
+    {
+      "name": "SM_CollectorTooth_1",
+      "triangles": 380,
+      "vertices": 192,
+      "bbox": [
+        -0.825,
+        -0.16,
+        1.78,
+        -0.425,
+        0.24,
+        2.18
+      ]
+    },
+    {
+      "name": "SM_CollectorTooth_2",
+      "triangles": 380,
+      "vertices": 192,
+      "bbox": [
+        -0.575,
+        -0.16,
+        1.78,
+        -0.175,
+        0.24,
+        2.18
+      ]
+    },
+    {
+      "name": "SM_CollectorTooth_3",
+      "triangles": 380,
+      "vertices": 192,
+      "bbox": [
+        -0.325,
+        -0.16,
+        1.78,
+        0.075,
+        0.24,
+        2.18
+      ]
+    },
+    {
+      "name": "SM_CollectorTooth_4",
+      "triangles": 380,
+      "vertices": 192,
+      "bbox": [
+        -0.075,
+        -0.16,
+        1.78,
+        0.325,
+        0.24,
+        2.18
+      ]
+    },
+    {
+      "name": "SM_CollectorTooth_5",
+      "triangles": 380,
+      "vertices": 192,
+      "bbox": [
+        0.175,
+        -0.16,
+        1.78,
+        0.575,
+        0.24,
+        2.18
+      ]
+    },
+    {
+      "name": "SM_CollectorTooth_6",
+      "triangles": 380,
+      "vertices": 192,
+      "bbox": [
+        0.425,
+        -0.16,
+        1.78,
+        0.825,
+        0.24,
+        2.18
+      ]
+    },
+    {
+      "name": "SM_JawPiston_1",
+      "triangles": 92,
+      "vertices": 48,
+      "bbox": [
+        -1.9157,
+        -1.6625,
+        0.39,
+        -1.1843,
+        0.1625,
+        0.71
+      ]
+    },
+    {
+      "name": "SM_JawPiston_2",
+      "triangles": 92,
+      "vertices": 48,
+      "bbox": [
+        1.1843,
+        -1.6625,
+        0.39,
+        1.9157,
+        0.1625,
+        0.71
+      ]
+    },
+    {
+      "name": "SM_CopperSteamPipe",
+      "triangles": 176,
+      "vertices": 90,
+      "bbox": [
+        -0.48,
+        -6.4,
+        -0.4727,
+        0.48,
+        6.4,
+        0.4727
+      ]
+    },
+    {
+      "name": "SM_ManometerCasing",
+      "triangles": 572,
+      "vertices": 288,
+      "bbox": [
+        -1.1369,
+        0.2631,
+        0.275,
+        1.1369,
+        2.5369,
+        0.825
+      ]
+    },
+    {
+      "name": "SM_ManometerNeedle",
+      "triangles": 12,
+      "vertices": 8,
+      "bbox": [
+        -0.08,
+        1.26,
+        0.82,
+        0.08,
+        2.04,
+        0.94
+      ]
+    }
+  ]
+}

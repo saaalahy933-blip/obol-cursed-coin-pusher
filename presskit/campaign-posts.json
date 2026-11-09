@@ -1,0 +1,65 @@
+{
+  "campaign_agent": "Agent 10 \u2014 Interactive Press Kit (presskit.html), Creator Outreach & Keymailer/Lurkit Architect",
+  "output_directory": "C:\\Users\\saaal\\.gemini\\antigravity\\scratch\\obol-cursed-coin-pusher\\release-builds\\indie-communities-campaign\\10-presskit-and-creator-outreach",
+  "visual_assets": [
+    "presskit-hero-banner-1920x1080.png",
+    "creator-thumbnail-overlay-kit-1920x1080.png",
+    "press-logos-and-medallion-sheet-1600x900.png"
+  ],
+  "interactive_presskit": "presskit.html",
+  "outreach_templates": [
+    {
+      "id": "pitch-01-roguelike-synergy-youtubers",
+      "target_segment": "Roguelike Deckbuilder & Synergy YouTubers (Creators who covered Balatro, Luck be a Landlord, CloverPit, Peglin, Ballionaire)",
+      "recommended_visual": "presskit-hero-banner-1920x1080.png",
+      "subject_lines": [
+        "What if Balatro & CloverPit lived inside a 240Hz occult coin pusher? (OBOL Review Key + Instant Browser Build)",
+        "For your next broken-synergy video: 240Hz physics coin cascades + 5 board-level Mythic Fusions [OBOL]",
+        "Can you break The Collector's $1,950 Quota without losing a finger? \u2014 OBOL: The Cursed Coin Pusher"
+      ],
+      "body_markdown": "Hi {{CreatorName}},\n\nYour runs breaking the economy in *{{RecentGameCovered}}* and *Balatro* were a huge reference point while tuning the synergy math in **OBOL: The Cursed Coin Pusher**.\n\n**The 15-Second Hook:**\nYou're locked inside an 1890s cast-iron penny-arcade booth across from an animatronic bronze-skull Collector. Every coin drop runs on a deterministic **240Hz rigid-body physics shelf**, and your goal is to chain multiplicative synergies to pay off escalating quotas ($445 -> $920 -> $1,950+) before the brass pendulum hits `00:00`.\n\n**Why It Fits Your Channel's 'Break The Game' Style:**\n- **5 Secret Board-Level Mythic Fusions:** Colliding 3 matching specialist tokens directly on the moving brass shelf transmutes them mid-cascade into oversized Mythic Relics.\n- **14 Diegetic Contraband Hardware Rigs:** Bolt physical contraptions onto the cabinet rails\u2014*Brass Guardrails* that bounce 70% of side-gutter losses back onto the shelf, *Piston Overclocks*, *Blood Magnets*, and *Tesla Arc Coils*.\n- **4 Alchemical Furnace Brands:** Stamp individual tokens in your pouch with *Gilded (2x Payout)*, *Lead-Core (+80% Pushing Mass)*, *Volatile Shockwaves*, or *Twin-Echo Duplication*.\n- **High-Stakes Collateral:** Miss a quota and the run doesn't immediately end\u2014you switch to **Camera [4]** and sacrifice one of your 3 fingers in the mahogany guillotine for a desperate blood-pact multiplier.\n\n**Instant Access (Zero Embargo & 100% DMCA-Safe Procedural Audio):**\n- **Steam / Desktop Native Key:** `{{Insert_Key_Or_Link}}` (Available in both Godot 4.7 Vulkan Forward+ and Unity 6 PhysX 240Hz native builds)\n- **Instant Zero-Install WebGL2 Browser Build:** `{{Insert_Browser_Link}}`\n- **Full Interactive Press Kit, GIFs & Thumbnail Kit:** `presskit.html`\n\nNo sponsorship strings attached\u2014if it looks like a fun synergy puzzle to break on camera, feel free to jump right in. Let me know if you want extra keys for community giveaways!\n\nBest,\n**Occult Cabinet Foundry**"
+    },
+    {
+      "id": "pitch-02-dark-occult-tension-streamers",
+      "target_segment": "Dark Occult / Tension Indie YouTubers & Twitch Streamers (Creators who covered Buckshot Roulette, Inscryption, Papers Please, No I'm Not a Human)",
+      "recommended_visual": "creator-thumbnail-overlay-kit-1920x1080.png",
+      "subject_lines": [
+        "Buckshot Roulette stakes inside an 1890s coin-pusher cabinet \u2014 OBOL (Key + Stream-Safe Build)",
+        "Pay $445 before 00:00 or put a finger in the 3D Guillotine [OBOL: The Cursed Coin Pusher]",
+        "Built for live chat reactions: 5 diegetic 3D camera cuts [1]-[5] + 3-finger collateral guillotine"
+      ],
+      "body_markdown": "Hey {{CreatorName}},\n\nLoved your reaction moments during *Buckshot Roulette* and *Inscryption*\u2014especially when a single bad call turns into a high-stakes table punishment. We built **OBOL: The Cursed Coin Pusher** specifically to capture that tactile, claustrophobic booth dread.\n\n**Why It Pops on Stream & YouTube Thumbnails:**\n- **Live 5-Camera Hotkeys (`[1]`\u2013`[5]`):** At any moment mid-drop, you can cut between `[1] Playfield Cascade`, `[2] The Collector's Clockwork Peephole` (an articulated bronze skull tracking your debt), `[3] Contraband Hardware Rack`, `[4] The 3D Finger Guillotine`, and `[5] Full Crypt Booth Overview`.\n- **The 3-Finger Collateral Loop:** When the clock hits `00:00` and you're $12 short on a quota as a Gold Crown teeters on the brass lip, The Collector locks your left hand into the pillory. You (or your chat poll!) choose whether to sever your Index, Middle, or Ring finger\u2014each granting a different permanent blood-cursed modifier while visibly removing the finger from the 3D stock.\n- **100% DMCA-Safe Procedural Metal Acoustics:** Every coin clatter, gear ratchet, and guillotine drop is synthesized mathematically in real time\u2014zero copyrighted music tracks or third-party sample packs, so VODs and highlights never get flagged.\n\n**Grab the Build & Thumbnail Reference Sheet:**\n- **Windows Native Build / Key:** `{{Insert_Key_Or_Link}}`\n- **Zero-Install Browser Link (Great for instant stream warmups):** `{{Insert_Browser_Link}}`\n- **Streamer Thumbnail & Camera Framing Sheet:** Attached (`creator-thumbnail-overlay-kit-1920x1080.png`) + `presskit.html`\n\nCheers,\n**Occult Cabinet Foundry**"
+    },
+    {
+      "id": "pitch-03-short-form-tiktok-shorts-creators",
+      "target_segment": "Short-Form TikTok, YouTube Shorts & Instagram Reels Gaming Creators",
+      "recommended_visual": "creator-thumbnail-overlay-kit-1920x1080.png",
+      "subject_lines": [
+        "30 Ready-to-Remix 9:16 Vertical Shorts + Instant Browser Build \u2014 OBOL: The Cursed Coin Pusher",
+        "High-retention 240Hz coin cascades + 3D Finger Guillotine cuts for your Shorts/TikTok feed",
+        "Free blanket permission to remix our 30 vertical Shorts or capture live via keys [1]-[4]"
+      ],
+      "body_markdown": "Hey {{CreatorName}},\n\nCoin-pusher overhang cascades and *Buckshot Roulette*-style high-stakes punishments are two of the highest-retention hooks on Shorts and TikTok right now\u2014so we combined both in **OBOL: The Cursed Coin Pusher**.\n\n**How We Made Recording 60-Second Viral Clips Effortless:**\n1. **Instant Zero-Install Browser Link:** Open the game in 2 seconds in any desktop browser (`{{Insert_Browser_Link}}`), press `[1]` for the 240Hz overhang lip cascade, and press `[4]` for the 3D Finger Guillotine closeup.\n2. **30 Pre-Rendered 1080x1920 Vertical Shorts Included:** Inside our campaign media pack (`youtube-shorts-campaign/`), we've included **30 vertical 9:16 gameplay clips** with full blanket permission for you to voice-over, green-screen react, stitch, or remix with full monetization.\n3. **Built-in 3-Second Visual Hooks:** Watching 40 gilded coins teeter on the bevelled brass ledge while the countdown timer flashes `00:03` and the guillotine blade raises is an instant scroll-stopper.\n\nWant the direct folder link to all 30 uncompressed 9:16 Shorts + a Steam key? Everything is unlocked and ready in our interactive `presskit.html`.\n\nBest,\n**Occult Cabinet Foundry**"
+    },
+    {
+      "id": "pitch-04-indie-gaming-press-journalists",
+      "target_segment": "Indie Gaming Press & Journalists (Rock Paper Shotgun, PC Gamer, IndieGamesPlus, TouchArcade, GamingOnLinux, GameDeveloper)",
+      "recommended_visual": "press-logos-and-medallion-sheet-1600x900.png",
+      "subject_lines": [
+        "[PRESS RELEASE] OBOL: The Cursed Coin Pusher fuses Balatro synergy math & Buckshot Roulette stakes inside a 240Hz 1890s arcade cabinet",
+        "Story Pitch: Why we built an occult coin-pusher roguelike simultaneously across WebGL2, Godot 4.7, and Unity 6",
+        "Review Code & Instant Browser Build: OBOL: The Cursed Coin Pusher (Available Now, Zero Embargo)"
+      ],
+      "body_markdown": "Hello {{EditorOrWriterName}},\n\nWe are writing to share review access and our interactive `presskit.html` for **OBOL: The Cursed Coin Pusher** (*The Collector's Debt*), an 1890s occult penny-arcade roguelike available now across PC (Windows Native) and instant WebGL2 desktop browsers.\n\n**Editorial Angle 1 \u2014 Mechanical Arcade Tactility Meets Roguelike Synergy Math:**\nFollowing the breakout wave of tactile gamble-roguelikes (*Balatro*, *Buckshot Roulette*, *CloverPit*, *Luck be a Landlord*), *OBOL* replaces flat card tables with a deterministic **240Hz rigid-body coin pusher**. Players draft from 25 cursed token archetypes, stamp tokens in an Alchemical Furnace (*Gilded 2x*, *Lead-Core +80% Mass*, *Twin-Echo*), trigger 5 board-level Mythic Fusions, and bolt 14 physical Contraband rigs directly onto the cabinet frame. Failing a quota forces an anatomical choice at the **3D Finger Guillotine**\u2014trading up to 3 fingers for desperate blood-pact buffs.\n\n**Editorial Angle 2 \u2014 Triple-Engine Parity & Zero-Sample Physical-Modeling Audio:**\nUnusually for an indie release, *OBOL* ships with 1:1 gameplay, visual, and telemetry parity across **three distinct engines**: a zero-install **Three.js WebGL2** browser build, a **Godot 4.7 Native (Vulkan Forward+)** build, and a **Unity 6 Native (PhysX 240Hz)** build. All three runtimes synthesize 25 categories of metallic coin collisions and clockwork foley mathematically in real time using modal plate resonators\u2014using zero pre-recorded audio samples.\n\n**Fast Facts & Review Access (Zero Embargo):**\n- **Title:** OBOL: The Cursed Coin Pusher (The Collector's Debt)\n- **Genre:** Occult Coin-Pusher Roguelike / Physics Synergy Builder\n- **Platforms:** Windows PC (64-bit Native) & WebGL2 Desktop Browser\n- **Price:** $6.99 USD (Desktop) / Free Browser Edition\n- **Press Kit (`presskit.html`):** Includes 10 uncompressed 1920x1080 screenshots, 4 high-framerate GIFs, 1080p60 trailers (MP4/WebM), and 6 icon sizes.\n- **Review Key / Direct Build:** `{{Insert_Key_Or_Link}}`\n\nWe are happy to provide additional keys for your editorial team or answer any questions on the 3-engine architecture and procedural physics/audio design.\n\nWarm regards,\n**Occult Cabinet Foundry**\npress@occultcabinetfoundry.com"
+    },
+    {
+      "id": "pitch-05-keymailer-lurkit-woovit-config",
+      "target_segment": "Keymailer, Lurkit & Woovit Automated Creator Campaign Listing & Tag Configuration",
+      "recommended_visual": "presskit-hero-banner-1920x1080.png",
+      "subject_lines": [
+        "Keymailer / Lurkit Official Campaign Title: OBOL: The Cursed Coin Pusher \u2014 1890s Occult Arcade Roguelike"
+      ],
+      "body_markdown": "### Keymailer / Lurkit / Woovit Campaign Configuration\n\n- **Campaign Title:** OBOL: The Cursed Coin Pusher (The Collector's Debt)\n- **Short Hook (140 chars):** 240Hz occult coin-pusher roguelike! Chain Mythic Fusions, bolt 14 Contraband rigs, and pay The Collector before the 3D Guillotine takes 3 fingers.\n- **Primary Genre Tags:** `Roguelike`, `Deckbuilder`, `Strategy`, `Simulation`, `Indie`, `Horror`, `Arcade`\n- **Similar Games / Creator Affinity Matching:** *Balatro*, *Buckshot Roulette*, *CloverPit*, *Luck be a Landlord*, *Inscryption*, *Peglin*, *Ballionaire*, *Papers, Please*\n- **Minimum Creator Thresholds (Auto-Approve Rules):**\n  - YouTube Long-Form: >= 750 Avg Views/Video OR >= 2,000 Subscribers in Roguelike/Indie niche\n  - YouTube Shorts / TikTok: >= 2,500 Avg Views/Short\n  - Twitch Live: >= 25 Concurrent Viewers (CCV) in Strategy/Variety Indie\n- **Creator Deliverable Notes (Shown on Key Claim):**\n  - Zero Embargo \u2014 Stream or publish immediately.\n  - 100% DMCA-Safe Procedural Audio \u2014 Zero licensed tracks or Content-ID strikes.\n  - Hotkeys `[1]`\u2013`[5]` switch live between Playfield, Collector Peephole, Contraband Rack, 3D Finger Guillotine, and Full Cabinet Overview for dynamic reaction cuts."
+    }
+  ]
+}

@@ -1,0 +1,1 @@
+import * as THREE from 'three'; import { GLTFLoader } from 'three/examples/jsm/loaders/GLTFLoader.js'; import * as CANNON from 'cannon-es'; const THREE_EXT = Object.assign({}, THREE, { GLTFLoader }); if (typeof window !== 'undefined') { window.THREE = THREE_EXT; window.CANNON = CANNON; }
